@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+
+:root{
+--fondo--blanco_puro--:#FFFFFF;
+--subsecciones--azul_agua_fresca:#E0F7FA;
+--Fondo_Footer--Barras_Laterales:#E8F5E9;
+--Texto_principal:#2196F3;
+--Texto_secundario:#607D8B;
+--Elementos--icon:#56b75b;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: var(--fondo--blanco_puro--);
+    color: var(--Texto_secundario) !important;
+    scroll-behavior: smooth;
+}
+
+/* Fuente para todos los encabezados */
+h1, h2, h3, h4{
+    font-family: 'Montserrat', sans-serif;
+    color: #2196F3 !important;
+}
+h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: whitesmoke !important;
+}
+i{
+    color: var(--Elementos--icon) !important;
+}
+.section-content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* ----------  Anuncio  ---------- */
+.aicolor {
+    background: var(--subsecciones--azul_agua_fresca);
+    padding: 5px 0;
+}
+
+.adcolor {
+    background: var(--Texto_principal);
+    padding: 5px 0;
+    color: whitesmoke;
+}
+.adcolor i{
+    color: whitesmoke !important;
+}
+
+/* ----------  Navigation  ---------- */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 9, 69, 0.08);
+}
+
+.btn-primary {
+    background: var(--Texto_principal) !important;
+    border: var(--Texto_principal) !important;
+    
+}
+.btn-primary i{
+    color: whitesmoke !important;
+}
+
+.btn-primary:hover {
+    background: var(--Elementos--icon) !important;
+    border: none !important;
+}
+
+.hero img {
+    height: 550px;
+    display: flex;
+    object-fit: cover;
+    width: 100%;
+}
+/* nosotros */
+.nosotros h2{
+position: relative;
+padding-bottom: 1rem;
+}
+.nosotros h2::after{
+position: absolute;
+content: '';
+left: 50%;
+bottom: 0;
+transform: translateX(-50%);
+height: 3px;
+width: 30rem;
+ background: linear-gradient(90deg, transparent, rgba(58, 118, 215, 0.902), transparent);
+}
+
+/*-------------------------------- ventajas -------------------------------------*/
+.ventajas {
+  background: url('./img/banner01.webp') no-repeat center center/cover;
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.ventajas::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(8, 55, 91, 0.6);
+  z-index: 0;
+}
+.ventajas h3{
+position: relative;
+padding-bottom: 1rem;
+}
+.ventajas h3::after{
+position: absolute;
+content: '';
+left: 50%;
+bottom: 0;
+transform: translateX(-50%);
+height: 4px;
+width: 38rem;
+ background: linear-gradient(90deg, transparent, rgba(58, 118, 215, 0.902), transparent);
+}
+
+/*---------------------------------- servicios --------------------------------------------*/
+.servicios h2{
+position: relative;
+padding-bottom: 1rem;
+}
+.servicios h2::after{
+position: absolute;
+content: '';
+left: 50%;
+bottom: 0;
+transform: translateX(-50%);
+height: 3px;
+width: 30rem;
+ background: linear-gradient(90deg, transparent, rgba(58, 118, 215, 0.902), transparent);
+}
+/* Estilos para el contenedor del efecto Antes y Después */
+.before-after-container {
+    position: relative;
+    width: 100%; /* Ocupa el 100% del ancho de su columna padre */
+    padding-bottom: 66.66%; /* Para mantener una relación de aspecto 3:2 (altura = 2/3 de ancho). Ajusta si tus imágenes tienen otra relación */
+    height: 0; /* Reinicia la altura ya que padding-bottom la manejará */
+    overflow: hidden;
+    border-radius: 0.375rem; /* Hereda border-radius de .card */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil, opcional */
+}
+
+/* Estilos para las imágenes Antes y Después */
+.before-image, .after-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    user-select: none; /* Evita que el texto de la imagen sea seleccionable durante el arrastre */
+}
+
+.after-image {
+    /* Inicialmente, muestra la mitad izquierda de la imagen "después" */
+    /* Este valor será actualizado por JavaScript */
+    clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%); 
+}
+
+.before-image img, .after-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+    pointer-events: none; /* Evita arrastrar la imagen en lugar de la línea */
+}
+
+/* Estilos para la línea vertical (manija de redimensionamiento) */
+.resize-handle {
+    position: absolute;
+    top: 0;
+    left: 50%; /* Posición inicial en el centro */
+    transform: translateX(-50%); /* Centra la línea */
+    width: 4px; /* Grosor de la línea */
+    height: 100%;
+    background-color: #007bff; /* Color Azul Dentista o de tu preferencia */
+    cursor: ew-resize; /* Cursor de redimensionamiento horizontal */
+    z-index: 10; /* Asegura que esté por encima de las imágenes */
+    border-left: 3px solid #fff; /* Borde blanco para mayor visibilidad */
+    border-right: 3px solid #fff; /* Borde blanco para mayor visibilidad */
+    touch-action: none; /* Previene el comportamiento de desplazamiento por defecto en dispositivos táctiles */
+}
+
+/* Opcional: Estilos para cuando se está arrastrando la línea */
+.resize-handle.dragging {
+    background-color: #0d6efd; /* Un azul ligeramente más oscuro al arrastrar */
+}
+
+/* Estilos existentes para .before-after-container, .before-image, .after-image, etc. */
+/* ... (Deja todo el CSS que ya tenías para el efecto) ... */
+
+/* NUEVOS ESTILOS: Para las etiquetas "Antes" y "Después" */
+.image-label {
+    position: absolute;
+    color: #fff; /* Texto blanco */
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente oscuro */
+    padding: 6px 12px; /* Relleno interno */
+    border-radius: 4px; /* Bordes ligeramente redondeados */
+    font-weight: bold;
+    font-size: 0.95rem; /* Tamaño de fuente, ajusta si es necesario */
+    z-index: 11; /* Asegura que esté por encima de las imágenes y la línea deslizadora */
+    text-transform: uppercase; /* Opcional: poner en mayúsculas */
+}
+
+.before-label {
+    top: 15px; /* Margen desde arriba */
+    left: 15px; /* Margen desde la izquierda */
+}
+
+.after-label {
+    top: 15px; /* Margen desde arriba */
+    right: 15px; /* Margen desde la derecha */
+}
+.card-title-plus{
+        background: var(--subsecciones--azul_agua_fresca) !important;
+        position: relative;
+    }
+.card:hover{
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    }
+    .card-img-top {
+  transition: transform 0.3s ease-in-out; /* Transición suave para el efecto */
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.1); /* Aumenta la escala en un 10% al hacer hover */
+}
+
+.card {
+  overflow: hidden; /* Importante para que el zoom no se salga del contenedor de la tarjeta */
+}
+/* Opcional: Ajustes para móviles para que las etiquetas no sean demasiado grandes */
+@media (max-width: 575.98px) { /* Breakpoint para pantallas extra pequeñas (xs) */
+    .image-label {
+        font-size: 1.75rem; /* Fuente más pequeña en móviles */
+        padding: 4px 8px; /* Menor padding */
+    }
+    .before-label,
+    .after-label {
+        top: 10px; /* Menor margen */
+        left: 10px; /* Menor margen */
+        right: 10px; /* Menor margen */
+    }
+}
+
+/*------------------------------------------------------------------------------------------*/
+
+/*---------------------------------- servicios --------------------------------------------*/
