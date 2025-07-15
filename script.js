@@ -82,3 +82,27 @@ document.addEventListener('DOMContentLoaded', () => {
         resizeHandle.style.transform = `translateX(-50%)`;
     });
 });
+
+ // Ejemplo de JavaScript para deshabilitar el envío de formularios si hay campos no válidos
+    (function () {
+      "use strict";
+
+      // Selecciona todos los formularios a los que queremos aplicar estilos de validación personalizados de Bootstrap
+      var forms = document.querySelectorAll(".needs-validation");
+
+      // Itera sobre ellos y previene el envío si no son válidos
+      Array.prototype.slice.call(forms).forEach(function (form) {
+        form.addEventListener(
+          "submit",
+          function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault(); // Detiene el envío del formulario
+              event.stopPropagation(); // Detiene la propagación del evento
+            }
+
+            form.classList.add("was-validated"); // Añade la clase para mostrar los estados de validación
+          },
+          false
+        );
+      });
+    })();
